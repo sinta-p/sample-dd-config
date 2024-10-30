@@ -1,0 +1,15 @@
+#Configured for APM and process monitoring, tested with admission controller injection
+datadog:
+  apiKeyExistingSecret: datadog-secret
+  site: datadoghq.com
+  clusterName: sin-eks-cluster
+  apm:
+    socketEnabled: true
+    hostSocketPath: /var/run/datadog/
+    socketPath: /var/run/datadog/apm.socket
+  admissionController:
+    enabled: true
+    mutateUnlabelled: false
+  processAgent:
+    enable: true
+    processCollection: true
